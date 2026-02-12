@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bali Lounge Кликер</title>
+    
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Шапка с информацией о заведении -->
+        <div class="header">
+            <div class="title-section">
+                <h1>BALI LOUNGE</h1>
+                <p class="address">MOSCOW • Зубовский бульвар</p>
+            </div>
+            <div class="rating">
+                <span class="star">⭐</span>
+                <span class="rating-value">4.8</span>
+                <span class="work-time">• 24/7</span>
+            </div>
+        </div>
+        
+        <!-- Ранг игрока -->
+        <div class="rank-container">
+            <span class="crown">👑</span>
+            <span class="rank-text" id="rank">Стажёр</span>
+        </div>
+        
+        <!-- Счетчик табака -->
+        <div class="balance">
+            <span class="tobacco-count" id="tobaccoCount">0</span>
+            <span class="tobacco-label">🍃 табака</span>
+        </div>
+        
+        <!-- Статистика дохода -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-icon">👆</span>
+                <span id="perTap">+1</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">⏱️</span>
+                <span id="perSecond">+0.0/сек</span>
+            </div>
+        </div>
+        
+        <!-- КЛИКЕР - ЛОГОТИП BALI LOUNGE -->
+        <div class="clicker-area">
+            <button class="logo-button" id="clickButton">
+                <div class="logo-circle" id="logoCircle">
+                    <div class="logo-leaves">
+                        <span class="leaf leaf1">🌿</span>
+                        <span class="leaf leaf2">🌴</span>
+                        <span class="leaf leaf3">🍃</span>
+                    </div>
+                    <div class="logo-text">
+                        <span class="bali">BALI</span>
+                        <span class="lounge">LOUNGE</span>
+                        <span class="moscow">MOSCOW</span>
+                    </div>
+                </div>
+            </button>
+        </div>
+        
+        <!-- Прогресс бар -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span class="progress-title">ПРОГРЕСС</span>
+                <span class="progress-count" id="progressCount">0/500</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        
+        <!-- Магазин улучшений -->
+        <div class="shop-header">
+            <span class="shop-icon">🛍️</span>
+            <span class="shop-title">ЛАУНЖ КОЛЛЕКЦИЯ</span>
+            <span class="shop-icon">🛍️</span>
+        </div>
+        
+        <!-- Список улучшений -->
+        <div class="upgrades-list" id="upgradesList"></div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="game.js"></script>
+</body>
+</html>
