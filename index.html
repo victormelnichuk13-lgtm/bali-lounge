@@ -3,94 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bali Lounge Кликер</title>
-    
-    <!-- Telegram Web App SDK -->
+    <title>Bali Lounge — Энергия</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    
-    <!-- Стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <!-- Шапка с информацией о заведении -->
+        <!-- Шапка с рейтингом и валютой -->
         <div class="header">
-            <div class="title-section">
-                <h1>BALI LOUNGE</h1>
-                <p class="address">MOSCOW • Зубовский бульвар</p>
+            <div class="title">
+                <h1>🏝️ BALI LOUNGE</h1>
+                <span class="address">Москва • Зубовский б-р</span>
             </div>
             <div class="rating">
-                <span class="star">⭐</span>
-                <span class="rating-value">4.8</span>
-                <span class="work-time">• 24/7</span>
+                ⭐ 4.8 · 24/7
             </div>
         </div>
-        
-        <!-- Ранг игрока -->
-        <div class="rank-container">
-            <span class="crown">👑</span>
-            <span class="rank-text" id="rank">Стажёр</span>
-        </div>
-        
-        <!-- Счетчик табака -->
+
+        <!-- Основная валюта (табак) -->
         <div class="balance">
             <span class="tobacco-count" id="tobaccoCount">0</span>
             <span class="tobacco-label">🍃 табака</span>
         </div>
-        
-        <!-- Статистика дохода -->
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-icon">👆</span>
-                <span id="perTap">+1</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-icon">⏱️</span>
-                <span id="perSecond">+0.0/сек</span>
-            </div>
-        </div>
-        
-        <!-- КЛИКЕР - ЛОГОТИП BALI LOUNGE -->
-        <div class="clicker-area">
-            <button class="logo-button" id="clickButton">
-                <div class="logo-circle" id="logoCircle">
-                    <div class="logo-leaves">
-                        <span class="leaf leaf1">🌿</span>
-                        <span class="leaf leaf2">🌴</span>
-                        <span class="leaf leaf3">🍃</span>
-                    </div>
-                    <div class="logo-text">
-                        <span class="bali">BALI</span>
-                        <span class="lounge">LOUNGE</span>
-                        <span class="moscow">MOSCOW</span>
-                    </div>
-                </div>
+
+        <!-- ВКЛАДКИ (ГЛАВНАЯ / УЛУЧШЕНИЯ) -->
+        <div class="tabs">
+            <button class="tab-btn active" id="tabMainBtn" onclick="switchTab('main')">
+                🖱️ КЛИКЕР
+            </button>
+            <button class="tab-btn" id="tabShopBtn" onclick="switchTab('shop')">
+                🛍️ УЛУЧШЕНИЯ
             </button>
         </div>
-        
-        <!-- Прогресс бар -->
+
+        <!-- ========== ВКЛАДКА 1: КЛИКЕР (только клик) ========== -->
+        <div id="tabMain" class="tab-content active">
+            <!-- Энергия -->
+            <div class="energy-section">
+                <div class="energy-header">
+                    <span class="energy-icon">⚡</span>
+                    <span class="energy-label">Энергия</span>
+                    <span class="energy-count" id="energyDisplay">500/500</span>
+                </div>
+                <div class="energy-bar">
+                    <div class="energy-fill" id="energyFill" style="width: 100%;"></div>
+                </div>
+                <div class="energy-regen">
+                    ⚡ Полное восстановление за 1 час · Макс. 500
+                </div>
+            </div>
+
+            <!-- БУСТЕРЫ (3 раза в день) -->
+            <div class="boosters-section">
+                <div class="boosters-title">
+                    <span>🚀 БУСТЕРЫ</span>
+                    <span class="boosters-left" id="boostersLeft">3/3 в день</span>
+                </div>
+                <div class="boosters-grid">
+                    <div class="booster-card" onclick="useBooster('full')">
+                        <div class="booster-icon">⚡⚡</div>
+                        <div class="booster-name">Полная зарядка</div>
+                        <div class="booster-desc">Мгновенно восстановить 500 энергии</div>
+                        <button class="booster-btn" id="boosterFullBtn">
+                            🔋 Активировать
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- КЛИКЕР - ЛОГОТИП -->
+            <div class="clicker-section">
+                <div class="clicker" id="clicker">
+                    <div class="logo" id="clickerLogo">
+                        <div class="leaves">🌿 🌴 🍃</div>
+                        <div class="bali-text">BALI</div>
+                        <div class="lounge-text">LOUNGE</div>
+                        <div class="moscow-text">MOSCOW</div>
+                    </div>
+                </div>
+                
+                <!-- Статистика кликов -->
+                <div class="click-stats">
+                    <div class="click-stat">
+                        <span>👆 За клик</span>
+                        <strong id="perTap">+1</strong>
+                    </div>
+                    <div class="click-stat">
+                        <span>📊 Всего кликов</span>
+                        <strong id="totalClicks">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пассивный доход (маленький блок) -->
+            <div class="passive-income">
+                <span>⏱️ Пассивный доход:</span>
+                <strong id="perSecond">+0.0/сек</strong>
+            </div>
+        </div>
+
+        <!-- ========== ВКЛАДКА 2: УЛУЧШЕНИЯ (магазин) ========== -->
+        <div id="tabShop" class="tab-content">
+            <div class="shop-header">
+                <h2>🛍️ ЛАУНЖ КОЛЛЕКЦИЯ</h2>
+                <p class="shop-subtitle">Улучшайте кальянную и зарабатывайте больше</p>
+            </div>
+
+            <!-- Список улучшений -->
+            <div class="upgrades-container" id="upgradesContainer">
+                <!-- Сюда будут добавляться улучшения через JS -->
+            </div>
+        </div>
+
+        <!-- Прогресс бар (виден на обеих вкладках) -->
         <div class="progress-section">
             <div class="progress-header">
-                <span class="progress-title">ПРОГРЕСС</span>
-                <span class="progress-count" id="progressCount">0/500</span>
+                <span>🏆 Путь к империи</span>
+                <span id="rankDisplay">Стажёр</span>
             </div>
             <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
             </div>
         </div>
-        
-        <!-- Магазин улучшений -->
-        <div class="shop-header">
-            <span class="shop-icon">🛍️</span>
-            <span class="shop-title">ЛАУНЖ КОЛЛЕКЦИЯ</span>
-            <span class="shop-icon">🛍️</span>
+
+        <!-- Нижний колонтитул -->
+        <div class="footer">
+            <small>Bali Lounge v3.1 · Полное восстановление за час</small>
         </div>
-        
-        <!-- Список улучшений -->
-        <div class="upgrades-list" id="upgradesList"></div>
     </div>
-    
-    <!-- JavaScript -->
+
     <script src="game.js"></script>
 </body>
 </html>
