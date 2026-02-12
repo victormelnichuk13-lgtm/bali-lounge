@@ -33,7 +33,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .title h1 {
@@ -66,11 +66,11 @@ body {
 /* Баланс */
 .balance {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .tobacco-count {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: 300;
     display: block;
     line-height: 1;
@@ -87,7 +87,7 @@ body {
 /* ВКЛАДКИ */
 .tabs {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     margin-bottom: 24px;
     background: rgba(0, 0, 0, 0.3);
     padding: 6px;
@@ -96,11 +96,11 @@ body {
 
 .tab-btn {
     flex: 1;
-    padding: 12px 16px;
+    padding: 10px 12px;
     border: none;
     background: transparent;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 12px;
     cursor: pointer;
@@ -120,157 +120,37 @@ body {
     display: block;
 }
 
-/* ===== СЕКЦИЯ ЭНЕРГИИ ===== */
-.energy-section {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    padding: 18px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(102, 204, 153, 0.3);
-}
+/* ===== ВКЛАДКА 1: КЛИКЕР ===== */
 
-.energy-header {
+/* Звание над логотипом */
+.rank-badge {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin-bottom: 12px;
-}
-
-.energy-icon {
-    font-size: 24px;
-}
-
-.energy-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-}
-
-.energy-count {
-    margin-left: auto;
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffd700;
-}
-
-.energy-bar {
-    width: 100%;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.energy-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ffd700, #ffaa00);
-    border-radius: 6px;
-    transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-.energy-regen {
-    font-size: 12px;
-    color: #66cc99;
-    text-align: right;
-}
-
-/* ===== БУСТЕРЫ ===== */
-.boosters-section {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    padding: 18px;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.boosters-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffd700;
 }
 
-.boosters-left {
-    background: rgba(255, 215, 0, 0.2);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    color: #ffd700;
+.rank-icon {
+    font-size: 20px;
 }
 
-.boosters-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-}
-
-.booster-card {
-    background: rgba(255, 215, 0, 0.1);
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.booster-icon {
-    font-size: 32px;
-    margin-bottom: 8px;
-}
-
-.booster-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffd700;
-    margin-bottom: 4px;
-}
-
-.booster-desc {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 12px;
-}
-
-.booster-btn {
+.rank-text {
     background: linear-gradient(90deg, #ffd700, #ffaa00);
-    border: none;
-    padding: 10px 24px;
+    padding: 6px 20px;
     border-radius: 30px;
-    color: #0a1a15;
+    font-size: 16px;
     font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-    width: 100%;
+    color: #0a1a15;
+    letter-spacing: 1px;
 }
 
-.booster-btn:active {
-    transform: scale(0.95);
-}
-
-.booster-btn:disabled {
-    opacity: 0.5;
-    filter: grayscale(100%);
-    cursor: not-allowed;
-}
-
-/* ===== КЛИКЕР ===== */
-.clicker-section {
+/* Кликер по центру */
+.clicker-center {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-}
-
-.clicker {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .logo {
@@ -325,213 +205,372 @@ body {
     margin-top: 8px;
 }
 
-.click-stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    width: 100%;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
+/* Энергия внизу */
+.energy-bottom {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(102, 204, 153, 0.3);
 }
 
-.click-stat {
+.energy-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.energy-icon {
+    font-size: 24px;
+}
+
+.energy-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.energy-count {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.energy-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.energy-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ffaa00);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.energy-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #66cc99;
+}
+
+/* Статистика дохода */
+.income-stats {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.stat-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.click-stat span {
+.stat-item span {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.click-stat strong {
-    font-size: 20px;
+.stat-item strong {
+    font-size: 18px;
     color: #66cc99;
 }
 
-.passive-income {
-    text-align: center;
-    padding: 12px;
-    background: rgba(102, 204, 153, 0.1);
-    border-radius: 12px;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #66cc99;
-}
-
-/* ===== МАГАЗИН УЛУЧШЕНИЙ ===== */
-.shop-header {
+/* ===== ВКЛАДКА 2: БУСТЕРЫ ===== */
+.boosters-header {
     margin-bottom: 20px;
 }
 
-.shop-header h2 {
+.boosters-header h2 {
     font-size: 22px;
     color: white;
     margin-bottom: 4px;
 }
 
-.shop-subtitle {
+.boosters-subtitle {
     font-size: 12px;
     color: #66cc99;
     opacity: 0.8;
 }
 
-.upgrades-container {
+.boosters-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 4px;
+    gap: 16px;
     margin-bottom: 20px;
 }
 
-.upgrades-container::-webkit-scrollbar {
+.booster-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.booster-card.can-buy {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.booster-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.booster-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 8px;
+}
+
+.booster-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+}
+
+.booster-price {
+    margin-bottom: 16px;
+}
+
+.price-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.price-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 4px;
+}
+
+.booster-btn {
+    background: linear-gradient(90deg, #ffd700, #ffaa00);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 30px;
+    color: #0a1a15;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.booster-btn:active {
+    transform: scale(0.95);
+}
+
+.booster-btn:disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+/* ===== ВКЛАДКА 3: УЛУЧШЕНИЯ (ПАССИВНЫЙ ДОХОД) ===== */
+.upgrades-header {
+    margin-bottom: 20px;
+}
+
+.upgrades-header h2 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.upgrades-subtitle {
+    font-size: 12px;
+    color: #66cc99;
+    opacity: 0.8;
+}
+
+.level-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(102, 204, 153, 0.2);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.level-badge {
+    background: #66cc99;
+    color: #0a1a15;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.current-income {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.income-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #66cc99;
+}
+
+.upgrades-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.upgrades-timeline::-webkit-scrollbar {
     width: 4px;
 }
 
-.upgrades-container::-webkit-scrollbar-track {
+.upgrades-timeline::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 2px;
 }
 
-.upgrades-container::-webkit-scrollbar-thumb {
+.upgrades-timeline::-webkit-scrollbar-thumb {
     background: #66cc99;
     border-radius: 2px;
 }
 
-.upgrade-card {
+.passive-upgrade-card {
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 16px;
     display: flex;
     align-items: center;
     gap: 16px;
     border: 1px solid rgba(102, 204, 153, 0.2);
-    transition: all 0.2s;
+    position: relative;
 }
 
-.upgrade-card.can-buy {
+.passive-upgrade-card.completed {
+    opacity: 0.5;
+    filter: grayscale(70%);
     border-color: #66cc99;
-    background: rgba(102, 204, 153, 0.1);
 }
 
-.upgrade-icon {
-    width: 60px;
-    height: 60px;
+.passive-upgrade-card.next {
+    border: 2px solid #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.upgrade-level-icon {
+    width: 50px;
+    height: 50px;
     background: rgba(102, 204, 153, 0.2);
-    border-radius: 16px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #66cc99;
 }
 
-.upgrade-info {
+.upgrade-level-info {
     flex: 1;
 }
 
-.upgrade-name {
+.upgrade-level-name {
     font-size: 16px;
     font-weight: 600;
     color: white;
     margin-bottom: 4px;
 }
 
-.upgrade-desc {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 6px;
-}
-
-.upgrade-profit {
-    background: rgba(102, 204, 153, 0.2);
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 11px;
+.upgrade-level-profit {
+    font-size: 14px;
     color: #66cc99;
-    display: inline-block;
 }
 
-.upgrade-price {
+.upgrade-level-price {
     text-align: right;
-    min-width: 90px;
 }
 
-.price-amount {
+.upgrade-level-amount {
     font-size: 18px;
     font-weight: 700;
     color: #ffd700;
     display: block;
 }
 
-.price-label {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    display: block;
-    margin-bottom: 8px;
+.checkmark {
+    color: #66cc99;
+    font-size: 24px;
+    margin-left: 8px;
 }
 
-.buy-btn {
-    background: #66cc99;
+.next-upgrade-container {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ffd700;
+}
+
+.next-upgrade-btn {
+    background: linear-gradient(90deg, #66cc99, #2a5a4a);
     border: none;
-    padding: 8px 20px;
+    padding: 16px 24px;
     border-radius: 30px;
-    color: #0a1a15;
-    font-size: 13px;
-    font-weight: 600;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.2s;
     width: 100%;
+    margin-bottom: 12px;
 }
 
-.buy-btn:disabled {
-    background: rgba(128, 128, 128, 0.3);
-    color: rgba(255, 255, 255, 0.5);
+.next-upgrade-btn:active {
+    transform: scale(0.98);
+}
+
+.next-upgrade-btn:disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
     cursor: not-allowed;
 }
 
-.buy-btn:not(:disabled):active {
-    transform: scale(0.95);
-}
-
-/* Прогресс секция */
-.progress-section {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 24px;
-}
-
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: white;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #66cc99, #ffd700);
-    border-radius: 3px;
-    transition: width 0.3s;
+.next-upgrade-info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Футер */
 .footer {
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: center;
     color: rgba(255, 255, 255, 0.3);
     font-size: 11px;
@@ -544,4 +583,5 @@ body {
     .tobacco-count { font-size: 56px; }
     .bali-text { font-size: 28px; }
     .lounge-text { font-size: 16px; }
+    .leaves { font-size: 40px; }
 }
